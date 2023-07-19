@@ -138,7 +138,7 @@
 		<div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center justify-center w-full">
 			<button
 				on:click={() => {
-					window.location.href = 'mailto:itsayushsehrawat@gmail.com';
+					window.location.href = 'mailto:admin@ayush.gg';
 				}}
 				class="w-full md:max-w-max px-8 py-2 rounded-md bg-gray-800 text-white text-xl flex gap-4 items-center justify-center hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
 			>
@@ -148,7 +148,7 @@
 			<p class="text-gray-600 text-xl">or</p>
 			<button
 				on:click={() => {
-					navigator.clipboard.writeText('itsayushsehrawat@gmail.com');
+					navigator.clipboard.writeText('admin@ayush.gg');
 				}}
 				class="w-full md:max-w-max px-8 py-2 rounded-md border-2 border-gray-800 text-xl flex gap-4 items-center justify-center hover:cursor-copy hover:scale-105 transition-all duration-300 ease-in-out"
 			>

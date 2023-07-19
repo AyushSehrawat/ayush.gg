@@ -2,7 +2,12 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {}
+		extend: {
+			fontFamily: {
+				'saira-condensed': ['Saira Condensed', 'sans-serif'],
+				'roboto-condensed': ['Roboto Condensed', 'sans-serif']
+			}
+		}
 	},
-	plugins: []
+	plugins: [require('@tailwindcss/container-queries')]
 };

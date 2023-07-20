@@ -3,6 +3,7 @@
 	import * as Icons from '$lib/icons/index.js';
 	import Row from '$lib/components/Row.svelte';
 	import work from '$lib/data/work.json';
+	import IcOutlineArrowOutward from '../lib/icons/IcOutlineArrowOutward.svelte';
 
 	const socialLinks = [
 		{
@@ -84,13 +85,13 @@
 </svelte:head>
 
 <main
-	class="min-h-screen md:h-screen w-screen flex flex-col md:flex-row overflow-x-hidden font-saira-condensed bg-black"
+	class="min-h-screen md:h-screen w-screen flex flex-col md:flex-row overflow-x-hidden font-saira-condensed bg-zinc-800"
 >
 	<section
-		class="flex w-full h-screen md:w-2/5 relative bg-contain bg-center bg-no-repeat p-10 overflow-hidden"
+		class="flex w-full h-screen md:w-4/12 relative bg-contain bg-center bg-no-repeat p-10 overflow-hidden"
 		style="background-image: url('wolf.gif');"
 	>
-		<div class="absolute top-0 left-0 w-full h-full bg-black opacity-20" />
+		<div class="absolute top-0 left-0 w-full h-full bg-zinc-900 opacity-20" />
 		<div class="h-full w-full flex flex-col items-start z-10">
 			<img alt="logo" src="logo.png" class="h-14 w-14 rounded-2xl" />
 			<div
@@ -121,7 +122,7 @@
 	</section>
 
 	<section
-		class="flex flex-col w-full md:w-3/5 overflow-x-hidden overflow-y-scroll p-10 items-center text-center gap-4"
+		class="flex flex-col w-full md:w-8/12 overflow-x-hidden overflow-y-scroll p-10 items-center text-center gap-4"
 	>
 		<p data-value={userCurrentTime} class="text-gray-400 text-xl randomize">{userCurrentTime}</p>
 		<img alt="logo" src="logo.png" class="h-16 w-16 rounded-2xl" />
@@ -204,6 +205,11 @@
 							class="rounded-2xl w-full h-auto md:max-w-md aspect-video"
 						/>
 					{/if}
+
+					<button class="flex items-center gap-2 py-4 text-gray-200 underline decoration-wavy underline-offset-4 hover:gap-x-4 transition-all duration-300">
+						<p>Read more</p>
+						<Icons.IcOutlineArrowOutward class="h-5 w-5" />
+					</button>
 				</div>
 			</Row>
 		{/each}

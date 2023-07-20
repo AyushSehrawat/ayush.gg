@@ -1,7 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as Icons from '$lib/icons/index.js';
-	import CibGmail from '../lib/icons/CibGmail.svelte';
+	import Row from '$lib/components/Row.svelte';
+	import work from '$lib/data/work.json';
 
 	const socialLinks = [
 		{
@@ -95,7 +96,7 @@
 			<div
 				class="h-full w-full flex flex-col gap-4 items-center justify-center text-center text-3xl md:text-4xl lg:text-5xl tracking-wide font-semibold text-white"
 			>
-				<p>404: Motivation Not Found</p>
+				<p>A Symphony of Ideas, Expressed on Canvas</p>
 
 				<div class="flex md:hidden flex-col items-center justify-center">
 					<div class="animate-bounce">
@@ -130,9 +131,9 @@
 			<div class="glowing-circle" />
 			<p class="text-gray-400 text-xl">Available for new opportunities</p>
 		</div>
-		<div class="flex items-center justify-center gap-8 py-4">
+		<div class="flex items-center justify-center gap-8 py-4 min-w-max min-h-max">
 			{#each socialLinks as link}
-				<a href={link.link} class="text-white" target="_blank"
+				<a href={link.link} class="text-white h-8 w-8" target="_blank"
 					><svelte:component this={link.path} /></a
 				>
 			{/each}
@@ -142,7 +143,7 @@
 				on:click={() => {
 					window.location.href = 'mailto:admin@ayush.gg';
 				}}
-				class="w-full md:max-w-max px-8 py-2 rounded-md bg-white text-black text-xl flex gap-4 items-center justify-center hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+				class="w-full md:max-w-max px-8 py-2 rounded-md bg-white text-black text-xl flex gap-4 items-center justify-center hover:cursor-pointer hover:bg-gray-200 transition-all duration-500 ease-in-out"
 			>
 				<p>Contact Me</p>
 				<Icons.CibGmail class="h-5 w-5" />
@@ -152,13 +153,60 @@
 				on:click={() => {
 					navigator.clipboard.writeText('admin@ayush.gg');
 				}}
-				class="w-full md:max-w-max px-8 py-2 rounded-md border-2 border-gray-400 text-white text-xl flex gap-4 items-center justify-center hover:cursor-copy hover:scale-105 transition-all duration-300 ease-in-out"
+				class="relative w-full md:max-w-max px-8 py-2 rounded-md border-2 border-gray-400 bg-gray-800 text-white text-xl flex gap-4 items-center justify-center hover:cursor-copy hover:border-gray-300 transition-all duration-300 ease-in-out"
 			>
 				<p>Copy Email</p>
 				<Icons.PhCopy class="h-5 w-5" />
 			</button>
 		</div>
 		<p data-value="DEL, INDIA" class="text-gray-400 text-xl tracking-wide randomize">DEL, INDIA</p>
+
+		<Row>
+			<div slot="title">
+				<h3>About Me</h3>
+			</div>
+			<div slot="content" class="flex flex-col items-start gap-2">
+				<p>Hi, I'm Ayush Sehrawat, a fullstack developer based in New Delhi, India.</p>
+				<p>
+					I've been developing for over 3 years and I'm always eager to learn and explore new
+					technologies. Currently, I'm working on personal projects, freelancing, and looking for
+					new opportunities.
+				</p>
+				<p>
+					I'm passionate about problem-solving and I pay close attention to detail. I'm confident
+					that I can contribute to the success of any project as a developer.
+				</p>
+			</div>
+		</Row>
+
+		{#each work.work as project}
+			<Row>
+				<div slot="title" class="text-start">
+					<h3>
+						{ project.when || 'Ongoing'}
+					</h3>
+				</div>
+				<div slot="content" class="flex flex-col items-start gap-2">
+					{#if project.link}
+						<a href={project.link} target="_blank" class="flex items-center gap-2 text-white hover:gap-x-4 transition-all duration-300">
+							{project.title}
+							<Icons.IcOutlineArrowOutward class="h-5 w-5" />
+						</a>
+					{:else}
+						<p class="text-white">{project.title}</p>
+					{/if}
+					<p class="text-gray-400">{project.description}</p>
+
+					{#if project.image}
+						<img
+							alt={project.name}
+							src={project.image}
+							class="rounded-2xl w-full h-auto md:max-w-md aspect-video"
+						/>
+					{/if}
+				</div>
+			</Row>
+		{/each}
 	</section>
 </main>
 

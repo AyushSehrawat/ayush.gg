@@ -1,0 +1,36 @@
+{
+    "work" : [
+        {
+            "id": "bitwrap-dashboard",
+            "type": "Ongoing",
+            "title": "Project dashboard at Bitwrap",
+            "link": "https://dash.bitwrap.cloud/",
+            "description": "Developing fullstack dashboard in Svelte and Rust"
+        },
+        {
+            "id": "brain",
+            "type": "Ongoing",
+            "title": "Brain at Neobrains",
+            "link": "https://github.com/neobrains/brain",
+            "description": "A minimal unix package manager made in Shell language"
+        },
+        {
+            "id": "neobrains-website",
+            "type": "Completed",
+            "when": "2023",
+            "title": "Website at Neobrains",
+            "link": "https://neobrains.dev/",
+            "description": "A minimal website for Neobrains built using TailwindCSS and Astro",
+            "image": "work/neobrains-website.png"
+        },
+        {
+            "id": "bitwrap-website",
+            "type": "Completed",
+            "when": "2023",
+            "title": "Website at Bitwrap",
+            "link": "https://bitwrap.cloud/",
+            "description": "A minimal website for Bitwrap built using TailwindCSS and Astro",
+            "image": "work/bitwrap-website.png"
+        }
+    ]
+}

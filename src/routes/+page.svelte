@@ -1,36 +1,38 @@
 <script>
 	import { onMount } from 'svelte';
+	import * as Icons from '$lib/icons/index.js';
+	import CibGmail from '../lib/icons/CibGmail.svelte';
 
 	const socialLinks = [
 		{
 			name: 'Github',
-			path: 'PhGithubLogo.svg',
+			path: Icons.PhGithubLogo,
 			link: 'https://github.com/AyushSehrawat'
 		},
 		{
 			name: 'LinkedIn',
-			path: 'PhLinkedinLogo.svg',
+			path: Icons.PhLinkedinLogo,
 			link: 'https://www.linkedin.com/in/AyushSehrawat/'
 		},
 		{
 			name: 'Twitter',
-			path: 'PhTwitterLogo.svg',
+			path: Icons.PhTwitterLogo,
 			link: 'https://twitter.com/mini5183'
 		},
 		{
 			name: 'Discord',
-			path: 'PhDiscordLogo.svg',
+			path: Icons.PhDiscordLogo,
 			link: 'https://discord.com/users/1108024311975002212'
 		}
 	];
 
-    let userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
-    let userCurrentTime = new Date().toLocaleTimeString('en-US', {
-        hour12: true,
-        hour: 'numeric',
-        minute: 'numeric',
-        timeZone: userTimeZone,
-    });
+	let userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+	let userCurrentTime = new Date().toLocaleTimeString('en-US', {
+		hour12: true,
+		hour: 'numeric',
+		minute: 'numeric',
+		timeZone: userTimeZone
+	});
 
 	onMount(async () => {
 		const randomizeElements = document.getElementsByClassName('randomize');
@@ -77,17 +79,17 @@
 	<meta name="author" content="Ayush Sehrawat" />
 	<meta name="robots" content="index, follow" />
 	<meta name="language" content="English" />
-	<meta name="revisit-after" content="7 days" />
+	<meta name="revisit-after" content="1 days" />
 </svelte:head>
 
 <main
-	class="min-h-screen md:h-screen w-screen flex flex-col md:flex-row overflow-x-hidden font-saira-condensed"
+	class="min-h-screen md:h-screen w-screen flex flex-col md:flex-row overflow-x-hidden font-saira-condensed bg-black"
 >
 	<section
 		class="flex w-full h-screen md:w-2/5 relative bg-contain bg-center bg-no-repeat p-10 overflow-hidden"
 		style="background-image: url('wolf.gif');"
 	>
-		<div class="absolute top-0 left-0 w-full h-full bg-black opacity-80" />
+		<div class="absolute top-0 left-0 w-full h-full bg-black opacity-20" />
 		<div class="h-full w-full flex flex-col items-start z-10">
 			<img alt="logo" src="logo.png" class="h-14 w-14 rounded-2xl" />
 			<div
@@ -120,18 +122,18 @@
 	<section
 		class="flex flex-col w-full md:w-3/5 overflow-x-hidden overflow-y-scroll p-10 items-center text-center gap-4"
 	>
-		<p data-value={userCurrentTime} class="text-gray-600 text-xl randomize">{userCurrentTime}</p>
+		<p data-value={userCurrentTime} class="text-gray-400 text-xl randomize">{userCurrentTime}</p>
 		<img alt="logo" src="logo.png" class="h-16 w-16 rounded-2xl" />
-		<h2 class="text-3xl md:text-4xl text-gray-800">Ayush Sehrawat</h2>
-		<p class="text-gray-600 text-2xl">Full Stack Developer | Open Source Enthusiast</p>
+		<h2 class="text-3xl md:text-4xl text-gray-200">Ayush Sehrawat</h2>
+		<p class="text-gray-400 text-2xl">Full Stack Developer | Open Source Enthusiast</p>
 		<div class="flex gap-x-4 items-center">
 			<div class="glowing-circle" />
-			<p class="text-gray-600 text-xl">Available for new opportunities</p>
+			<p class="text-gray-400 text-xl">Available for new opportunities</p>
 		</div>
-		<div class="flex items-center gap-8 py-4">
+		<div class="flex items-center justify-center gap-8 py-4">
 			{#each socialLinks as link}
-				<a href={link.link} target="_blank"
-					><img alt={link.name} src={link.path} class="h-8 w-8" /></a
+				<a href={link.link} class="text-white" target="_blank"
+					><svelte:component this={link.path} /></a
 				>
 			{/each}
 		</div>
@@ -140,23 +142,23 @@
 				on:click={() => {
 					window.location.href = 'mailto:admin@ayush.gg';
 				}}
-				class="w-full md:max-w-max px-8 py-2 rounded-md bg-gray-800 text-white text-xl flex gap-4 items-center justify-center hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
+				class="w-full md:max-w-max px-8 py-2 rounded-md bg-white text-black text-xl flex gap-4 items-center justify-center hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
 			>
 				<p>Contact Me</p>
-				<img alt="logo" src="CibGmail.svg" class="h-5 w-5" />
+				<Icons.CibGmail class="h-5 w-5" />
 			</button>
-			<p class="text-gray-600 text-xl">or</p>
+			<p class="text-gray-400 text-xl">or</p>
 			<button
 				on:click={() => {
 					navigator.clipboard.writeText('admin@ayush.gg');
 				}}
-				class="w-full md:max-w-max px-8 py-2 rounded-md border-2 border-gray-800 text-xl flex gap-4 items-center justify-center hover:cursor-copy hover:scale-105 transition-all duration-300 ease-in-out"
+				class="w-full md:max-w-max px-8 py-2 rounded-md border-2 border-gray-400 text-white text-xl flex gap-4 items-center justify-center hover:cursor-copy hover:scale-105 transition-all duration-300 ease-in-out"
 			>
 				<p>Copy Email</p>
-				<img alt="logo" src="PhCopy.svg" class="h-5 w-5" />
+				<Icons.PhCopy class="h-5 w-5" />
 			</button>
 		</div>
-		<p data-value="DEL, INDIA" class="text-gray-600 text-xl tracking-wide randomize">DEL, INDIA</p>
+		<p data-value="DEL, INDIA" class="text-gray-400 text-xl tracking-wide randomize">DEL, INDIA</p>
 	</section>
 </main>
 

@@ -1,0 +1,6 @@
+export { default as CibGmail } from './CibGmail.svelte'
+export { default as PhCopy } from './PhCopy.svelte'
+export { default as PhDiscordLogo } from './PhDiscordLogo.svelte'
+export { default as PhGithubLogo } from './PhGithubLogo.svelte'
+export { default as PhLinkedinLogo } from './PhLinkedinLogo.svelte'
+export { default as PhTwitterLogo } from './PhTwitterLogo.svelte'

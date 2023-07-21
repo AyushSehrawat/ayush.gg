@@ -37,6 +37,9 @@
 </script>
 
 <section class="flex flex-col w-full overflow-x-hidden p-10 items-center text-center gap-4">
+    <div class="w-full bg-zinc-700 p-2 text-white border">
+        <p class="text-gray-400 text-xl">This website is still under development. Some features may not work as expected.</p>
+    </div>
 	<p data-value={userCurrentTime} class="text-gray-400 text-xl randomize">{userCurrentTime}</p>
 	<img alt="logo" src="logo.png" class="h-16 w-16 rounded-2xl" />
 	<h2 class="text-3xl md:text-4xl text-gray-200">Ayush Sehrawat</h2>

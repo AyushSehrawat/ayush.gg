@@ -54,7 +54,7 @@
 </svelte:head>
 
 <main
-	class="min-h-[100dvh] md:h-[100dvh] w-full flex flex-col-reverse md:flex-row overflow-x-hidden font-saira-condensed bg-zinc-800"
+	class="min-h-[100dvh] md:h-[100dvh] w-full flex flex-col md:flex-row overflow-x-hidden font-saira-condensed bg-zinc-800"
 >
 	<Navbar />
 

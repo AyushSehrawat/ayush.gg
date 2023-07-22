@@ -38,13 +38,13 @@
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 
 		{#if item.name == $currentSelectedTab}
-			<div on:click|preventDefault={() => changeCurrent('home')} class="h-8 w-8">
+			<div on:click|preventDefault={() => changeCurrent('home')} class="h-6 w-6">
 				<svelte:component this={item.icon} />
 			</div>
 		{:else}
 			<div
 				on:click|preventDefault={() => changeCurrent(item.name)}
-				class="h-8 w-8 text-gray-400 hover:text-white transition-all duration-300 ease-in-out"
+				class="h-6 w-6 text-gray-400 hover:text-white transition-all duration-300 ease-in-out"
 			>
 				<svelte:component this={item.icon} />
 			</div>

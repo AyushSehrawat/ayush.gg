@@ -122,7 +122,7 @@
 					<img
 						alt={project.name}
 						src={project.image}
-						class="rounded-2xl w-full h-auto md:max-w-md aspect-video"
+						class="rounded-2xl w-full h-auto md:max-w-md"
 					/>
 				{/if}
 

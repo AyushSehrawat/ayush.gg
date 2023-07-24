@@ -9,6 +9,9 @@
 	import Stack from '$lib/components/Stack.svelte';
 	import Work from '$lib/components/Work.svelte';
 
+	export let data;
+	currentSelectedTab.update((_) => data.page);
+
 	onMount(async () => {
 		const randomizeElements = document.getElementsByClassName('randomize');
 		const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -68,6 +71,8 @@
 		<Contact />
 	{:else if $currentSelectedTab == "about"}
 		<About />
+	{:else}
+		<Home />
 	{/if}
 
 </main>

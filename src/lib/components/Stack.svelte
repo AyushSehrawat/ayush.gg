@@ -1,7 +1,7 @@
 <script>
 	import * as Icons from '$lib/icons/index.js';
 	import Row from '$lib/components/Row.svelte';
-    import Footer from '$lib/components/Footer.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	const softwares = [
 		{
@@ -96,6 +96,9 @@
 <section
 	class="flex flex-col h-full w-full overflow-x-hidden p-10 items-center justify-start gap-4 text-white select-none"
 >
+	<div class="p-2">
+		<img alt="cube" src="cube.jpg" class="max-w-xs md:max-w-2xl h-auto rounded-2xl" />
+	</div>
 	<Row>
 		<div slot="title">&#x200B;</div>
 		<div slot="content" class="flex flex-col font-saira-condensed gap-2">
@@ -167,5 +170,5 @@
 		</div>
 	</Row>
 
-    <Footer />
+	<Footer />
 </section>

@@ -31,7 +31,7 @@
 </script>
 
 <div
-	class="flex flex-row md:flex-col items-center justify-between md:justify-center md:gap-6 p-4 fixed md:static bottom-0 w-full md:w-16 h-16 md:h-[100dvh] overflow-hidden bg-zinc-800 text-white border-t md:border-r md:border-t-0 border-gray-600"
+	class="z-50 flex flex-row md:flex-col items-center justify-between md:justify-center md:gap-6 p-4 fixed md:static bottom-0 w-full md:w-16 h-16 md:h-[100dvh] overflow-hidden bg-zinc-800 text-white border-t md:border-r md:border-t-0 border-gray-600"
 >
 	{#each sidebar as item}
 		<!-- svelte-ignore a11y-click-events-have-key-events -->

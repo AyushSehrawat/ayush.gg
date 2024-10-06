@@ -1,0 +1,64 @@
+---
+import "@fontsource/space-mono/400.css";
+import "@fontsource/space-mono/700.css";
+import "@fontsource/space-grotesk/300.css";
+import "@fontsource/space-grotesk/400.css";
+import "@fontsource/space-grotesk/700.css";
+
+import spaceMonoWoff2 from "@fontsource/space-mono/files/space-mono-latin-400-normal.woff2?url";
+import spaceGroteskWoff2 from "@fontsource/space-grotesk/files/space-grotesk-latin-300-normal.woff2?url";
+
+interface Props {
+    title: string;
+    description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="/logo.png" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        {description && <meta name="description" content={description} />}
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            href={spaceMonoWoff2}
+            crossorigin="anonymous"
+        />
+        <link
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            href={spaceGroteskWoff2}
+            crossorigin="anonymous"
+        />
+
+        <title>{title}</title>
+    </head>
+    <body class="font-light font-primary bg-bg text-txt">
+        <slot />
+    </body>
+</html>

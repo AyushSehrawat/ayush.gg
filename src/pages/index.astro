@@ -1,16 +1,13 @@
 ---
-
+import BaseLayout from "@/layout/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="mini" description="fullstack developer">
+	<div class="w-full h-screen flex flex-col mx-auto items-start justify-center max-w-4xl gap-4">
+		<div class="flex gap-4 text-start w-full items-center">
+			<h1 class="font-secondary font-normal text-5xl">mini</h1>
+			<img class="w-10 h-10 rounded-full" src="/logo.png" alt="logo" />
+		</div>
+		<p class="text-lg">hey there! i'm a student interested in comp sci, web dev, backend dev, design, and more.</p>
+	</div>
+</BaseLayout>

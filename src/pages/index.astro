@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "@/layout/BaseLayout.astro";
-import { Image } from 'astro:assets';
-import miniLogo from '@/images/logo.png';
+import { Image } from "astro:assets";
+import miniLogo from "@/images/logo.png";
+import { navBarItems } from "@/lib/utils";
 ---
 
 <BaseLayout title="mini" description="fullstack developer">
@@ -9,12 +10,24 @@ import miniLogo from '@/images/logo.png';
         class="w-full h-screen flex flex-col mx-auto items-start justify-center max-w-5xl gap-4 p-8 md:px-24 lg:px-32"
     >
         <div class="flex gap-4 text-start w-full items-center">
-            <h1 class="font-secondary font-normal text-5xl">mini</h1>
+            <h1 class="font-secondary font-normal text-5xl text-txt-0">mini</h1>
             <Image class="w-10 h-10 rounded-full" src={miniLogo} alt="logo" />
         </div>
         <p class="text-lg">
             hey there! i'm a student interested in comp sci, web dev, backend
             dev, design, and more.
         </p>
+        <div class="flex flex-col lg:flex-row gap-4">
+            {
+                navBarItems.map((item) => (
+                    <a
+                        href={item.href}
+                        class="text-2xl font-secondary hover:underline underline-offset-4 mt-2"
+                    >
+                        /{item.name}
+                    </a>
+                ))
+            }
+        </div>
     </div>
 </BaseLayout>

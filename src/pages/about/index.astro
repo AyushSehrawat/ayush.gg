@@ -1,0 +1,68 @@
+---
+import BaseLayout from "@/layout/BaseLayout.astro";
+import Header from "@/components/header.astro";
+import { Icon } from "astro-icon/components";
+
+interface Social {
+    name: string;
+    href?: string;
+    isLink?: boolean;
+}
+
+const socials: Social[] = [
+    {
+        name: "github",
+        href: "https://github.com/ayushsehrawat",
+        isLink: true,
+    },
+    {
+        name: "discord",
+        href: "@_mini.dev",
+        isLink: false,
+    },
+];
+---
+
+<BaseLayout title="about" description="about me">
+    <Header />
+    <div
+        class="w-full h-full flex flex-col mx-auto items-start justify-center max-w-5xl gap-8 p-8 md:px-24 lg:px-32"
+    >
+        <div class="gap-4 flex flex-col">
+            <h1 class="font-secondary text-5xl text-txt-0">about</h1>
+            <p class="text-lg">
+                hey there! i'm a college student who goes by mini online. i'm
+                interested in computer science, web development, backend
+                development, design, and more. i'm passionate about learning new
+                things and sharing my knowledge with others. i'm currently
+                working on a few projects and learning new technologies. i'm
+                always open to new opportunities and collaborations, so feel
+                free to reach out to me!
+            </p>
+        </div>
+        <div class="gap-4 flex flex-col">
+            <h2 class="font-secondary text-3xl text-txt-0">links</h2>
+            <div class="flex flex-col gap-2">
+                {
+                    socials.map((social) => (
+                        <div class="flex flex-row gap-2 items-center">
+                            <span class="text-lg font-secondary">
+                                {social.name}
+                            </span>
+                            {social.isLink ? (
+                                <a href={social.href}>
+                                    <Icon
+                                        name="ph:arrow-up-right"
+                                        class="size-4"
+                                    />
+                                </a>
+                            ) : (
+                                <span class="text-pink">{social.href}</span>
+                            )}
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</BaseLayout>

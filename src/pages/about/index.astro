@@ -9,6 +9,16 @@ interface Social {
     isLink?: boolean;
 }
 
+interface StackItem {
+    name: string;
+}
+interface Stack {
+    web: StackItem[];
+    backend: StackItem[];
+    databases: StackItem[];
+    other: StackItem[];
+}
+
 const socials: Social[] = [
     {
         name: "github",
@@ -21,6 +31,65 @@ const socials: Social[] = [
         isLink: false,
     },
 ];
+
+const stack: Stack = {
+    web: [
+        {
+            name: "js",
+        },
+        {
+            name: "ts",
+        },
+        {
+            name: "html",
+        },
+        {
+            name: "css",
+        },
+        {
+            name: "sveltekit",
+        },
+        {
+            name: "astro",
+        },
+        {
+            name: 'tailwindcss',
+        }
+    ],
+    backend: [
+        {
+            name: "python",
+        },
+        {
+            name: "fastapi",
+        },
+        {
+            name: "bash",
+        }
+    ],
+    databases: [
+        {
+            name: "mongodb",
+        },
+        {
+            name: "postgresql",
+        },
+    ],
+    other: [
+        {
+            name: "git",
+        },
+        {
+            name: "vscode",
+        },
+        {
+            name: "docker",
+        },
+        {
+            name: "linux",
+        },
+    ],
+};
 ---
 
 <BaseLayout title="about" description="about me">
@@ -65,6 +134,29 @@ const socials: Social[] = [
                     ))
                 }
             </div>
+        </div>
+        <div class="gap-4 flex flex-col">
+            <h3 class="font-secondary text-2xl text-txt-0">stack</h3>
+            {
+                (Object.keys(stack) as (keyof Stack)[]).map((key) => (
+                    <div class="flex flex-wrap items-center">
+                        <h4 class="font-secondary text-xl text-txt-0 mr-1">
+                            {key}
+                        </h4>
+                        <Icon name="ph:arrow-right" class="size-4 mr-2" />
+                            {
+                                stack[key].map((item) => (
+                                    <span class="text-lg font-secondary">
+                                        {item.name}
+                                    </span>
+                                    <span class="mx-2">
+                                        {item.name === stack[key][stack[key].length - 1].name ? "" : "/"}
+                                    </span>
+                                ))
+                            }
+                    </div>
+                ))
+            }
         </div>
     </div>
 </BaseLayout>

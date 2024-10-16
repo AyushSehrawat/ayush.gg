@@ -8,7 +8,7 @@ import { Icon } from "astro-icon/components";
 <div class="flex items-center justify-between p-8 md:px-24 lg:px-32">
     <a href="/" class="flex gap-4 text-start items-center">
         <h1 class="font-secondary font-normal text-2xl">mini</h1>
-        <Image class="size-6 rounded-full" src={miniLogo} alt="logo" />
+        <Image class="size-6 rounded-full" src={miniLogo} alt="logo" loading={"eager"} />
     </a>
     <nav class="lg:flex gap-4 hidden">
         {

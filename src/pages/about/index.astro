@@ -121,7 +121,7 @@ const stack: Stack = {
                                 {social.name}
                             </span>
                             {social.isLink ? (
-                                <a href={social.href}>
+                                <a href={social.href} aria-label={social.name}>
                                     <Icon
                                         name="ph:arrow-up-right"
                                         class="size-4"

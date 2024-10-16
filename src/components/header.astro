@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import miniLogo from "@/images/logo.png";
 import { navBarItems } from "@/lib/utils";
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="flex items-center justify-between p-8 md:px-24 lg:px-32">
@@ -9,7 +10,7 @@ import { navBarItems } from "@/lib/utils";
         <h1 class="font-secondary font-normal text-2xl">mini</h1>
         <Image class="size-6 rounded-full" src={miniLogo} alt="logo" />
     </a>
-    <nav class="flex gap-4">
+    <nav class="lg:flex gap-4 hidden">
         {
             navBarItems.map((item) => (
                 <a
@@ -21,4 +22,58 @@ import { navBarItems } from "@/lib/utils";
             ))
         }
     </nav>
+    <div class="lg:hidden">
+        <button
+            id="menu"
+            type="button"
+            tabindex="0"
+            class="focus:outline-none hover:cursor-pointer"
+        >
+            <Icon name="ph:list" class="size-6" />
+        </button>
+    </div>
+
+    <nav
+        id="mobile-nav"
+        class="lg:hidden hidden fixed z-[9999] top-0 left-0 h-screen w-screen backdrop-blur-md"
+    >
+        <div class="flex flex-col gap-4 p-8 md:px-24 h-full w-full">
+            <button
+                id="mobile-nav-close"
+                type="button"
+                tabindex="0"
+                class="focus:outline-none hover:cursor-pointer w-full flex justify-end"
+            >
+                <Icon name="ph:x" class="size-6 max-w-max" />
+            </button>
+            <div
+                class="flex flex-col gap-4 h-full w-full items-center justify-center"
+            >
+                {
+                    navBarItems.map((item) => (
+                        <a
+                            href={item.href}
+                            class="text-2xl font-secondary hover:underline underline-offset-4 mt-2"
+                        >
+                            /{item.name}
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </nav>
 </div>
+
+<script>
+    document.getElementById("menu")?.addEventListener("click", () => {
+        const mobileNav = document.getElementById("mobile-nav");
+        mobileNav?.classList.toggle("hidden");
+    });
+
+    document
+        .getElementById("mobile-nav-close")
+        ?.addEventListener("click", () => {
+            const mobileNav = document.getElementById("mobile-nav");
+            mobileNav?.classList.add("hidden");
+        });
+</script>

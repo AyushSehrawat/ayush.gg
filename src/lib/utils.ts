@@ -5,5 +5,5 @@ interface NavBarItem {
 
 export const navBarItems: NavBarItem[] = [
   { name: "about", href: "/about" },
-//   { name: "contact", href: "/contact" },
+  { name: "contact", href: "/contact" },
 ];

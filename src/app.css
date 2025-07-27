@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-display: 'Outfit', 'sans-serif';
+	--color-bg: hsl(220 10% 8%);
+	--color-bg-2: hsl(220 10% 11%);
+	--color-bg-3: hsl(220 10% 16%);
+	--color-txt-3: hsl(220 11% 35%);
+	--color-txt-2: hsl(220 11% 60%);
+	--color-txt: hsl(220 30% 80%);
+	--color-txt-0: hsl(220 45% 90%);
+	--color-blue: hsl(190 70% 50%);
+	--color-purple: hsl(240 80% 66%);
+	--color-pink: hsl(279 80% 66%);
+}
+
+/* outfit-latin-400-normal */
+@font-face {
+	font-family: 'Outfit';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+	src:
+		url(https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-400-normal.woff2)
+			format('woff2'),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-400-normal.woff)
+			format('woff');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* outfit-latin-500-normal */
+@font-face {
+	font-family: 'Outfit';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 500;
+	src:
+		url(https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-500-normal.woff2)
+			format('woff2'),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-500-normal.woff)
+			format('woff');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* outfit-latin-600-normal */
+@font-face {
+	font-family: 'Outfit';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 600;
+	src:
+		url(https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-600-normal.woff2)
+			format('woff2'),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-600-normal.woff)
+			format('woff');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* outfit-latin-700-normal */
+@font-face {
+	font-family: 'Outfit';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 700;
+	src:
+		url(https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-700-normal.woff2)
+			format('woff2'),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-700-normal.woff)
+			format('woff');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* outfit-latin-800-normal */
+@font-face {
+	font-family: 'Outfit';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 800;
+	src:
+		url(https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-800-normal.woff2)
+			format('woff2'),
+		url(https://cdn.jsdelivr.net/fontsource/fonts/outfit@latest/latin-800-normal.woff)
+			format('woff');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

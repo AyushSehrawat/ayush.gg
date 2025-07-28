@@ -12,7 +12,7 @@
 
 <main class="flex min-h-dvh flex-col items-center justify-between gap-16 p-8">
 	<article class="flex w-full max-w-xl flex-1 flex-col justify-center">
-		<div class="mb-12 space-y-2 mt-4">
+		<div class="mt-4 mb-12 space-y-2">
 			<h1 class="text-2xl font-bold text-txt-0">{title}</h1>
 			<p class="text-sm text-txt-2">{date}</p>
 		</div>

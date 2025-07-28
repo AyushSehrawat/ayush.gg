@@ -3,4 +3,4 @@ title: "hello world"
 date: "2025-07-28"
 ---
 
-hello world
+...and yea that's it.

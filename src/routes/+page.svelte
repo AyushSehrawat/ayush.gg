@@ -73,7 +73,7 @@
 <main class="flex min-h-dvh flex-col items-center justify-between gap-16 p-8">
 	<article class="flex w-full max-w-xl flex-1 flex-col justify-center gap-10">
 		<div class={getAnimationClass()} style="transition-delay: 0ms;">
-			<header class="mb-6 flex items-center gap-2">
+			<header class="mb-6 flex items-center gap-2 mt-4">
 				<img src="/logo.png" alt="Mini's logo" class="size-8 rounded-full" loading="eager" />
 				<h1 class="text-2xl text-txt-0">mini</h1>
 			</header>

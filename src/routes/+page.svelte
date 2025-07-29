@@ -99,17 +99,17 @@
 		</section>
 
 		<section class={getAnimationClass()} style="transition-delay: 400ms;">
-			<h2 class="mb-6 text-xl text-txt-0">posts</h2>
+			<h2 class="mb-6 text-xl text-txt-0">writings</h2>
 			<ul class="space-y-2">
-				{#each data.posts as post (post.slug)}
+				{#each data.writings as writing (writing.slug)}
 					<li class="flex items-center justify-between gap-4">
 						<a
-							href={`/post/${post.slug}`}
+							href={`/writings/${writing.slug}`}
 							class="text-blue underline transition-all duration-200 hover:no-underline"
 						>
-							{post.metadata.title}
+							{writing.metadata.title}
 						</a>
-						<span class="text-sm text-txt-2">{post.metadata.date}</span>
+						<span class="text-sm text-txt-2">{writing.metadata.date}</span>
 					</li>
 				{/each}
 			</ul>

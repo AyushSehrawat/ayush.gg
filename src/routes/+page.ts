@@ -1,10 +1,10 @@
 import type { PageLoad } from './$types';
-import { getAllPostsMetadata } from '$lib/helpers';
+import { getAllWritingsMetadata } from '$lib/helpers';
 
 export const load = (async () => {
-	const posts = await getAllPostsMetadata();
+	const writings = await getAllWritingsMetadata();
 
 	return {
-		posts
+		writings
 	};
 }) satisfies PageLoad;

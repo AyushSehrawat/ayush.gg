@@ -3,7 +3,7 @@
 	import { cn } from '$lib/utils';
 
 	const { title, date } = data.metadata;
-	const { PostContent } = data;
+	const { WritingContent } = data;
 </script>
 
 <svelte:head>
@@ -24,7 +24,7 @@
 				'prose-a:text-blue'
 			)}
 		>
-			<PostContent />
+			<WritingContent />
 		</div>
 	</article>
 

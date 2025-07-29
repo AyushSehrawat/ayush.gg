@@ -1,34 +1,34 @@
-export interface PostMetadata {
+export interface WritingMetadata {
 	title: string;
 	date: string;
 }
 
-export interface Post {
+export interface Writing {
 	slug: string;
-	metadata: PostMetadata;
+	metadata: WritingMetadata;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	content?: any;
 }
 
-export async function getAllPostsMetadata(): Promise<Post[]> {
-	const postModules = import.meta.glob('/src/lib/posts/*.svx', {
+export async function getAllWritingsMetadata(): Promise<Writing[]> {
+	const writingModules = import.meta.glob('/src/lib/writings/*.svx', {
 		eager: true,
 		import: 'metadata'
 	});
 
-	const posts: Post[] = [];
+	const writings: Writing[] = [];
 
-	for (const path in postModules) {
+	for (const path in writingModules) {
 		const slug = path.split('/').pop()?.replace('.svx', '') || '';
-		const metadata = postModules[path] as PostMetadata;
+		const metadata = writingModules[path] as WritingMetadata;
 
-		posts.push({
+		writings.push({
 			slug,
 			metadata
 		});
 	}
 
-	return posts.sort(
+	return writings.sort(
 		(a, b) => new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
 	);
 }

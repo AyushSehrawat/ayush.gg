@@ -88,7 +88,7 @@
 			<h2 class="mb-6 text-xl text-txt-0">now</h2>
 			<p class="leading-relaxed">
 				currently working on a few projects, including a new version of this website and some other
-				fun stuff. Check out my <a
+				fun stuff. check out my <a
 					href="https://github.com/ayushsehrawat"
 					class="text-blue underline transition-all duration-200 hover:no-underline"
 					target="_blank"
